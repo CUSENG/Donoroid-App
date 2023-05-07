@@ -1,7 +1,7 @@
 package com.android.lifedonors.app.fragments;
 
 import android.Manifest;
-import android.app.Fragment;
+
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import com.android.lifedonors.app.R;
 import com.android.lifedonors.app.viewmodels.GetNearbyPlacesData;
@@ -73,12 +74,12 @@ public class NearByHospitalActivity extends Fragment implements
             checkLocationPermission();
         }
 
-        /*SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.gMap);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.gMap);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         } else {
             Toast.makeText(getActivity(), "MapFragment is null, why?", Toast.LENGTH_LONG).show();
-        }*/
+        }
 
     }
 
