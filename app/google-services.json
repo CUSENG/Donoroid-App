@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:168113844797:android:8c3c3a8c73fb8254",
         "android_client_info": {
-          "package_name": "com.android.iunoob.bloodbank"
+          "package_name": "com.android.lifedonors.app"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "168113844797-jgav0mn9ckf1j659q77r8qnbf5h4kvni.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.android.iunoob.bloodbank",
+            "package_name": "com.android.lifedonors.app",
             "certificate_hash": "dcb94ea92b95d9569b1a8d06d594593deb56f3ab"
           }
         },
