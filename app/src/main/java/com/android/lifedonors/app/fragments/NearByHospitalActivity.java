@@ -5,16 +5,17 @@ import android.app.Fragment;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.android.lifedonors.app.R;
 import com.android.lifedonors.app.viewmodels.GetNearbyPlacesData;
@@ -72,12 +73,12 @@ public class NearByHospitalActivity extends Fragment implements
             checkLocationPermission();
         }
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.gMap);
+        /*SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.gMap);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         } else {
             Toast.makeText(getActivity(), "MapFragment is null, why?", Toast.LENGTH_LONG).show();
-        }
+        }*/
 
     }
 
@@ -219,6 +220,8 @@ public class NearByHospitalActivity extends Fragment implements
         dataTransfer[1] = url;
 
         getNearbyPlacesData.execute(dataTransfer);
-        Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+        }
     }
 }

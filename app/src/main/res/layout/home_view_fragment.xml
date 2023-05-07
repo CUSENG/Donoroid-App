@@ -8,11 +8,11 @@
     android:background="@drawable/red_button_bg"
     tools:context=".fragments.HomeView">
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyleposts"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyleposts"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
