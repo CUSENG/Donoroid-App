@@ -46,26 +46,20 @@ public class RestorePassword extends AppCompatActivity {
 
                 final String email = useremail.getText().toString();
 
-                if(TextUtils.isEmpty(email))
-                {
+                if (TextUtils.isEmpty(email)) {
                     useremail.setError("Email required!");
-                }
-                else
-                {
+                } else {
                     pd.show();
                     mAuth.sendPasswordResetEmail(email)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful())
-                                    {
-                                        Toast.makeText(getApplicationContext(), "We have sent an email to "+" '"+ email +"'. Please check your email.", Toast.LENGTH_LONG)
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(getApplicationContext(), "We have sent an email to " + " '" + email + "'. Please check your email.", Toast.LENGTH_LONG)
                                                 .show();
                                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                         //useremail.setText(null);
-                                    }
-                                    else
-                                    {
+                                    } else {
                                         Toast.makeText(getApplicationContext(), "Sorry, There is something went wrong. please try again some time later.", Toast.LENGTH_LONG)
                                                 .show();
                                         useremail.setText(null);

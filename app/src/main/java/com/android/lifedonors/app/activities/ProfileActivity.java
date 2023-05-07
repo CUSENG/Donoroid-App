@@ -77,7 +77,7 @@ public class ProfileActivity extends AppCompatActivity {
             retypePassword.setVisibility(View.GONE);
             btnSignup.setText("Update Profile");
             pd.dismiss();
-           /// getActionBar().setTitle("Profile");
+            /// getActionBar().setTitle("Profile");
             getSupportActionBar().setTitle("Profile");
             findViewById(R.id.image_logo).setVisibility(View.GONE);
             isUpdate = true;
@@ -107,13 +107,10 @@ public class ProfileActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                if(dataSnapshot.exists())
-                                {
+                                if (dataSnapshot.exists()) {
                                     isDonor.setChecked(true);
                                     isDonor.setText("Unmark this to leave from donors");
-                                }
-                                else
-                                {
+                                } else {
                                     Toast.makeText(ProfileActivity.this, "Your are not a donor! Be a donor and save life by donating blood.",
                                             Toast.LENGTH_LONG).show();
                                 }
@@ -152,7 +149,7 @@ public class ProfileActivity extends AppCompatActivity {
                 final String Address = address.getText().toString();
                 final int Division = division.getSelectedItemPosition();
                 final String blood = bloodgroup.getSelectedItem().toString();
-                final String div   = division.getSelectedItem().toString();
+                final String div = division.getSelectedItem().toString();
 
                 try {
 
@@ -197,8 +194,7 @@ public class ProfileActivity extends AppCompatActivity {
                                                     db_ref.child(id).child("Address").setValue(Address);
                                                     db_ref.child(id).child("Division").setValue(Division);
 
-                                                    if(isDonor.isChecked())
-                                                    {
+                                                    if (isDonor.isChecked()) {
                                                         donor_ref.child(div).child(blood).child(id).child("UID").setValue(id).toString();
                                                         donor_ref.child(div).child(blood).child(id).child("LastDonate").setValue("Don't donate yet!");
                                                         donor_ref.child(div).child(blood).child(id).child("TotalDonate").setValue(0);
@@ -232,8 +228,7 @@ public class ProfileActivity extends AppCompatActivity {
                             db_ref.child(id).child("Address").setValue(Address);
                             db_ref.child(id).child("Division").setValue(Division);
 
-                            if(isDonor.isChecked())
-                            {
+                            if (isDonor.isChecked()) {
                                 donor_ref.child(div).child(blood).child(id).child("UID").setValue(id).toString();
                                 donor_ref.child(div).child(blood).child(id).child("LastDonate").setValue("Don't donate yet!");
                                 donor_ref.child(div).child(blood).child(id).child("TotalDonate").setValue(0);
@@ -241,9 +236,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 donor_ref.child(div).child(blood).child(id).child("Contact").setValue(Contact);
                                 donor_ref.child(div).child(blood).child(id).child("Address").setValue(Address);
 
-                            }
-                            else
-                            {
+                            } else {
 
                                 donor_ref.child(div).child(blood).child(id).removeValue();
 
@@ -267,7 +260,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void ShowError(String error) {
 
-        Toast.makeText(ProfileActivity.this, "Please, Enter a valid "+error,
+        Toast.makeText(ProfileActivity.this, "Please, Enter a valid " + error,
                 Toast.LENGTH_LONG).show();
     }
 

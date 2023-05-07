@@ -11,14 +11,12 @@ import java.net.URL;
 
 public class DownloadUrl {
 
-    public String readUrl(String myUrl) throws IOException
-    {
+    public String readUrl(String myUrl) throws IOException {
         String data = "";
         InputStream inputStream = null;
         HttpURLConnection urlConnection = null;
 
-        try
-        {
+        try {
             URL url = new URL(myUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.connect();
@@ -26,9 +24,8 @@ public class DownloadUrl {
             inputStream = urlConnection.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             StringBuffer sb = new StringBuffer();
-            String line="";
-            while ((line = br.readLine()) != null)
-            {
+            String line = "";
+            while ((line = br.readLine()) != null) {
                 sb.append(line);
             }
 
@@ -39,8 +36,7 @@ public class DownloadUrl {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             inputStream.close();
             urlConnection.disconnect();
         }

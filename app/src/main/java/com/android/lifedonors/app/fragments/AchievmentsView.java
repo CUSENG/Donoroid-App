@@ -67,7 +67,7 @@ public class AchievmentsView extends Fragment {
         donateInfo = view.findViewById(R.id.donateInfo);
 
         getActivity().setTitle("Achievements");
-        mAuth  = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         lastDate = "";
 
 
@@ -83,8 +83,7 @@ public class AchievmentsView extends Fragment {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    if(dataSnapshot.exists())
-                    {
+                    if (dataSnapshot.exists()) {
                         final UserData userData = dataSnapshot.getValue(UserData.class);
                         final int getdiv = userData.getDivision();
                         final int getbg = userData.getBloodGroup();
@@ -95,15 +94,13 @@ public class AchievmentsView extends Fragment {
                         donorQ.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.exists())
-                                {
+                                if (dataSnapshot.exists()) {
                                     final DonorData donorData = dataSnapshot.getValue(DonorData.class);
-                                    totalDonate.setText(donorData.getTotalDonate()+" times");
-                                    if(donorData.getTotalDonate() == 0) {
+                                    totalDonate.setText(donorData.getTotalDonate() + " times");
+                                    if (donorData.getTotalDonate() == 0) {
                                         lastDate = "01/01/2001";
                                         lastDonate.setText("Do not donate yet!");
-                                    }
-                                    else {
+                                    } else {
                                         lastDate = donorData.getLastDonate();
                                         lastDonate.setText(donorData.getLastDonate());
                                     }
@@ -111,56 +108,53 @@ public class AchievmentsView extends Fragment {
                                     totday = 0;
                                     nextDonate = view.findViewById(R.id.nextDonate);
                                     yesno = view.findViewById(R.id.yesnolayout);
-                                    if(lastDate.length() != 0) {
+                                    if (lastDate.length() != 0) {
 
                                         int cnt = 0;
                                         int tot = 0;
                                         for (int i = 0; i < lastDate.length(); i++) {
                                             if (cnt == 0 && lastDate.charAt(i) == '/') {
                                                 day = tot;
-                                                tot=0;
-                                                cnt+=1;
+                                                tot = 0;
+                                                cnt += 1;
 
                                             } else if (cnt == 1 && lastDate.charAt(i) == '/') {
-                                                cnt+=1;
+                                                cnt += 1;
                                                 month = tot;
-                                                tot=0;
+                                                tot = 0;
 
                                             } else tot = tot * 10 + (lastDate.charAt(i) - '0');
                                         }
                                         year = tot;
                                         calendar = Calendar.getInstance(TimeZone.getDefault());
                                         cur_day = calendar.get(Calendar.DAY_OF_MONTH);
-                                        cur_month = calendar.get(Calendar.MONTH)+1;
+                                        cur_month = calendar.get(Calendar.MONTH) + 1;
                                         cur_year = calendar.get(Calendar.YEAR);
 
-                                        if(day>cur_day) {
+                                        if (day > cur_day) {
                                             cur_day += 30;
                                             cur_month -= 1;
                                         }
                                         totday += (cur_day - day);
 
-                                        if(month>cur_month)
-                                        {
-                                            cur_month+=12;
-                                            cur_year -=1;
+                                        if (month > cur_month) {
+                                            cur_month += 12;
+                                            cur_year -= 1;
                                         }
-                                        totday += ((cur_month - month)*30);
+                                        totday += ((cur_month - month) * 30);
 
-                                        totday += ((cur_year - year)*365);
+                                        totday += ((cur_year - year) * 365);
 
-                                        try
-                                        {
-                                            if(totday>120)
-                                            {
+                                        try {
+                                            if (totday > 120) {
                                                 donateInfo.setText("Have you donated today?");
                                                 nextDonate.setVisibility(View.GONE);
                                                 yesno.setVisibility(View.VISIBLE);
 
                                                 yes = view.findViewById(R.id.btnYes);
-                                               cur_day = calendar.get(Calendar.DAY_OF_MONTH);
-                                               cur_month = calendar.get(Calendar.MONTH)+1;
-                                               cur_year = calendar.get(Calendar.YEAR);
+                                                cur_day = calendar.get(Calendar.DAY_OF_MONTH);
+                                                cur_month = calendar.get(Calendar.MONTH) + 1;
+                                                cur_year = calendar.get(Calendar.YEAR);
 
                                                 yes.setOnClickListener(new View.OnClickListener() {
                                                     @Override
@@ -168,37 +162,31 @@ public class AchievmentsView extends Fragment {
                                                         db_ref.child(divisionlist[getdiv])
                                                                 .child(bloodgroup[getbg])
                                                                 .child(mAuth.getCurrentUser().getUid())
-                                                                .child("LastDonate").setValue(cur_day+"/"+cur_month+"/"+cur_year);
+                                                                .child("LastDonate").setValue(cur_day + "/" + cur_month + "/" + cur_year);
                                                         db_ref.child(divisionlist[getdiv])
                                                                 .child(bloodgroup[getbg])
                                                                 .child(mAuth.getCurrentUser().getUid())
-                                                                .child("TotalDonate").setValue(donorData.getTotalDonate()+1);
+                                                                .child("TotalDonate").setValue(donorData.getTotalDonate() + 1);
                                                         startActivity(new Intent(getActivity(), Dashboard.class));
                                                     }
                                                 });
-                                            }
-                                            else
-                                            {
+                                            } else {
                                                 donateInfo.setText("Next donation available in:");
                                                 yesno.setVisibility(View.GONE);
                                                 nextDonate.setVisibility(View.VISIBLE);
-                                                nextDonate.setText((120-totday)+" days");
+                                                nextDonate.setText((120 - totday) + " days");
                                             }
-                                        } catch (Exception e)
-                                        {
+                                        } catch (Exception e) {
                                             e.printStackTrace();
                                         }
 
                                     }
 
 
-
-                                }
-                                else
-                                {
+                                } else {
                                     LinearLayout linearLayout = view.findViewById(R.id.donorAchiev);
                                     linearLayout.setVisibility(View.GONE);
-                                    TextView tv  = view.findViewById(R.id.ShowInof);
+                                    TextView tv = view.findViewById(R.id.ShowInof);
                                     tv.setVisibility(View.VISIBLE);
                                     Toast.makeText(getActivity(), "Update your profile to be a donor first.", Toast.LENGTH_LONG)
                                             .show();
@@ -213,10 +201,8 @@ public class AchievmentsView extends Fragment {
                         });
 
 
-                    }
-                    else
-                    {
-                        Toast.makeText(getActivity(), "You are not a user."+divisionlist[0]+" "+bloodgroup[0], Toast.LENGTH_LONG)
+                    } else {
+                        Toast.makeText(getActivity(), "You are not a user." + divisionlist[0] + " " + bloodgroup[0], Toast.LENGTH_LONG)
                                 .show();
                     }
 
@@ -231,8 +217,7 @@ public class AchievmentsView extends Fragment {
             });
 
 
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

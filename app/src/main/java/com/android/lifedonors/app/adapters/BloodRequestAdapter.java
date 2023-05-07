@@ -19,8 +19,7 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
 
     private List<CustomUserData> postLists;
 
-    public class PostHolder extends RecyclerView.ViewHolder
-    {
+    public class PostHolder extends RecyclerView.ViewHolder {
         TextView Name, bloodgroup, Address, contact, posted;
 
         public PostHolder(@NonNull View itemView) {
@@ -35,8 +34,7 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
         }
     }
 
-    public BloodRequestAdapter(List<CustomUserData> postLists)
-    {
+    public BloodRequestAdapter(List<CustomUserData> postLists) {
         this.postLists = postLists;
     }
 
@@ -52,20 +50,17 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
     @Override
     public void onBindViewHolder(PostHolder postHolder, int i) {
 
-        if(i%2==0)
-        {
+        if (i % 2 == 0) {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#C13F31"));
-        }
-        else
-        {
+        } else {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         CustomUserData customUserData = postLists.get(i);
-        postHolder.Name.setText("Posted by: "+customUserData.getName());
-        postHolder.Address.setText("From: "+customUserData.getAddress()+", "+customUserData.getDivision());
-        postHolder.bloodgroup.setText("Needs "+customUserData.getBloodGroup());
-        postHolder.posted.setText("Posted on:"+customUserData.getTime()+", "+customUserData.getDate());
+        postHolder.Name.setText("Posted by: " + customUserData.getName());
+        postHolder.Address.setText("From: " + customUserData.getAddress() + ", " + customUserData.getDivision());
+        postHolder.bloodgroup.setText("Needs " + customUserData.getBloodGroup());
+        postHolder.posted.setText("Posted on:" + customUserData.getTime() + ", " + customUserData.getDate());
         postHolder.contact.setText(customUserData.getContact());
 
     }

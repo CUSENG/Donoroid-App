@@ -23,6 +23,6 @@ public class AboutUs extends Fragment {
 
         textView = view.findViewById(R.id.txtv);
         Linkify.addLinks(textView, Linkify.ALL);
-        return  view;
+        return view;
     }
 }

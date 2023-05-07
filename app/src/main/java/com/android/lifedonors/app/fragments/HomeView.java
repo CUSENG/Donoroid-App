@@ -31,7 +31,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class HomeView extends Fragment {
 
     private View view;
@@ -77,15 +76,15 @@ public class HomeView extends Fragment {
         return view;
 
     }
-    private void AddPosts()
-    {
+
+    private void AddPosts() {
         Query allposts = donor_ref.child("posts");
         pd.show();
         allposts.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if(dataSnapshot.exists()) {
+                if (dataSnapshot.exists()) {
 
                     for (DataSnapshot singlepost : dataSnapshot.getChildren()) {
                         CustomUserData customUserData = singlepost.getValue(CustomUserData.class);
@@ -93,9 +92,7 @@ public class HomeView extends Fragment {
                         restAdapter.notifyDataSetChanged();
                     }
                     pd.dismiss();
-                }
-                else
-                {
+                } else {
                     Toast.makeText(getActivity(), "Database is empty now!",
                             Toast.LENGTH_LONG).show();
                 }

@@ -66,8 +66,6 @@ public class SearchDonorFragment extends Fragment {
         pd.setCanceledOnTouchOutside(false);
 
 
-
-
         mAuth = FirebaseAuth.getInstance();
         fuser = mAuth.getCurrentUser();
         fdb = FirebaseDatabase.getInstance();
@@ -93,36 +91,32 @@ public class SearchDonorFragment extends Fragment {
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
                 recyclerView.setAdapter(sdadapter);
-                Query qpath  = db_ref.child(division.getSelectedItem().toString())
+                Query qpath = db_ref.child(division.getSelectedItem().toString())
                         .child(bloodgroup.getSelectedItem().toString());
                 qpath.addListenerForSingleValueEvent(new ValueEventListener() {
-                   @Override
-                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                       if(dataSnapshot.exists())
-                       {
-                           for(DataSnapshot singleitem : dataSnapshot.getChildren())
-                           {
-                               DonorData donorData = singleitem.getValue(DonorData.class);
-                               donorItem.add(donorData);
-                               sdadapter.notifyDataSetChanged();
-                           }
-                       }
-                       else
-                       {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            for (DataSnapshot singleitem : dataSnapshot.getChildren()) {
+                                DonorData donorData = singleitem.getValue(DonorData.class);
+                                donorItem.add(donorData);
+                                sdadapter.notifyDataSetChanged();
+                            }
+                        } else {
 
-                           Toast.makeText(getActivity(), "Database is empty now!",
-                                   Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Database is empty now!",
+                                    Toast.LENGTH_LONG).show();
 
-                       }
-                   }
+                        }
+                    }
 
-                   @Override
-                   public void onCancelled(@NonNull DatabaseError databaseError) {
-                       Log.d("User", databaseError.getMessage());
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.d("User", databaseError.getMessage());
 
-                   }
-               });
-               pd.dismiss();
+                    }
+                });
+                pd.dismiss();
             }
         });
         return view;

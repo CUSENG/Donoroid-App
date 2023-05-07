@@ -19,8 +19,7 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
 
     private List<DonorData> postLists;
 
-    public class PostHolder extends RecyclerView.ViewHolder
-    {
+    public class PostHolder extends RecyclerView.ViewHolder {
         TextView Name, Address, contact, posted, totaldonate;
 
         public PostHolder(@NonNull View itemView) {
@@ -35,8 +34,7 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
         }
     }
 
-    public SearchDonorAdapter(List<DonorData> postLists)
-    {
+    public SearchDonorAdapter(List<DonorData> postLists) {
         this.postLists = postLists;
     }
 
@@ -52,20 +50,17 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
     @Override
     public void onBindViewHolder(PostHolder postHolder, int i) {
 
-        if(i%2==0)
-        {
+        if (i % 2 == 0) {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#C13F31"));
-        }
-        else
-        {
+        } else {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
         DonorData donorData = postLists.get(i);
-        postHolder.Name.setText("Name: "+donorData.getName());
+        postHolder.Name.setText("Name: " + donorData.getName());
         postHolder.contact.setText(donorData.getContact());
-        postHolder.Address.setText("Address: "+donorData.getAddress());
-        postHolder.totaldonate.setText("Total Donation: "+donorData.getTotalDonate()+" times");
-        postHolder.posted.setText("Last Donation: "+donorData.getLastDonate());
+        postHolder.Address.setText("Address: " + donorData.getAddress());
+        postHolder.totaldonate.setText("Total Donation: " + donorData.getTotalDonate() + " times");
+        postHolder.posted.setText("Last Donation: " + donorData.getLastDonate());
 
 
     }

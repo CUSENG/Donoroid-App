@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 
 public class CustomUserData implements Serializable {
-   private String Address, Division, Contact;
-   private String Name, BloodGroup;
-   private String Time, Date;
+    private String Address, Division, Contact;
+    private String Name, BloodGroup;
+    private String Time, Date;
 
 
-   public CustomUserData() {
+    public CustomUserData() {
 
     }
 
@@ -52,7 +52,7 @@ public class CustomUserData implements Serializable {
     }
 
     public void setName(String name) {
-       this.Name = name;
+        this.Name = name;
     }
 
     public String getBloodGroup() {

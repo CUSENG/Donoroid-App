@@ -54,7 +54,9 @@ public class UserData {
         return Gender;
     }
 
-    public void setName(String name) { this.Name = name; }
+    public void setName(String name) {
+        this.Name = name;
+    }
 
     public void setEmail(String email) {
         this.Email = email;

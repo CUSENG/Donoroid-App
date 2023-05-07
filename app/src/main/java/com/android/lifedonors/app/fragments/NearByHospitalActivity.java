@@ -37,7 +37,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 
-
 public class NearByHospitalActivity extends Fragment implements
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
@@ -76,9 +75,7 @@ public class NearByHospitalActivity extends Fragment implements
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.gMap);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
-        }
-        else
-        {
+        } else {
             Toast.makeText(getActivity(), "MapFragment is null, why?", Toast.LENGTH_LONG).show();
         }
 
@@ -137,7 +134,7 @@ public class NearByHospitalActivity extends Fragment implements
 
         if (ActivityCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                &&  ActivityCompat.checkSelfPermission(getActivity(),
+                && ActivityCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(getActivity(), "You need to enable permissions to display location !", Toast.LENGTH_SHORT).show();
         }
@@ -193,7 +190,7 @@ public class NearByHospitalActivity extends Fragment implements
     @Override
     public void onLocationChanged(Location location) {
         lastlocation = location;
-        LatLng latLng = new LatLng(location.getLatitude() , location.getLongitude());
+        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Current Location");
@@ -208,22 +205,20 @@ public class NearByHospitalActivity extends Fragment implements
     public void onStart() {
         super.onStart();
 
-        if(client!=null)
-        {
+        if (client != null) {
             client.connect();
         }
     }
 
-   public void ShowHospitals(double latitude, double longitude)
-   {
-       mMap.clear();
-       Object dataTransfer[] = new Object[2];
-       GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
-       String url = getUrl(latitude, longitude, "hospital");
-       dataTransfer[0] = mMap;
-       dataTransfer[1] = url;
+    public void ShowHospitals(double latitude, double longitude) {
+        mMap.clear();
+        Object dataTransfer[] = new Object[2];
+        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+        String url = getUrl(latitude, longitude, "hospital");
+        dataTransfer[0] = mMap;
+        dataTransfer[1] = url;
 
-       getNearbyPlacesData.execute(dataTransfer);
-       Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
-   }
+        getNearbyPlacesData.execute(dataTransfer);
+        Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+    }
 }
