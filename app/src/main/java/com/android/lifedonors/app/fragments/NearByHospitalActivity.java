@@ -144,7 +144,19 @@ public class NearByHospitalActivity extends Fragment implements
         fusedLocationProviderClient.getLastLocation().addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
-                ShowHospitals(location.getLatitude(), location.getLongitude());
+                //ShowHospitals(location.getLatitude(), location.getLongitude());
+
+                MarkerOptions markerOptions = new MarkerOptions();
+
+                LatLng latLng = new LatLng(39.9252953,32.8292729);
+                markerOptions.position(latLng);
+                markerOptions.title("Başkent University Ankara Hospital");
+                markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+
+                mMap.addMarker(markerOptions);
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
+
             }
         });
 
