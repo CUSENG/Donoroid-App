@@ -11,7 +11,7 @@
     tools:context=".activities.SplashActivity"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/red_button_bg">
+    android:background="@drawable/background_gradient">
 
     <LinearLayout
         android:background="@drawable/circle"

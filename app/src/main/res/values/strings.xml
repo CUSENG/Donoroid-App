@@ -57,9 +57,5 @@
     <string name="female_">Eğer kadınsanız, sağlıklı olmalı ve kendinizi iyi hissetmelisiniz\nBirçok eyalette en az 17 yaşında olmalısınız\nEn az 5 fit 5 inç boyunda olmalısınız\nEn az 150 pound ağırlığında olmalısınız.</string>
     <string name="male_">Eğer erkekseniz, sağlıklı olmalı ve kendinizi iyi hissetmelisiniz\nBirçok eyalette en az 17 yaşında olmalısınız\nEn az 5 fit 1 inç boyunda olmalısınız\nEn az 130 pound ağırlığında olmalısınız.</string>
     <string name="info_">Kan bağışlamak hayat kurtarır. Verdiğiniz kan acil durumlarda ve uzun süreli tedavileri olan insanlar için bir can simididir. Bağışçılar cömertçe kan vermeseydi bugün birçok kişi hayatta olmazdı. \n\nNeden kan vermenize ihtiyacımız var?\n\nGünlük 6000\'den fazla kan bağışına ihtiyacımız var. Kan bağışı yapmak için çoğu insanın 17–65 yaş arasında olması gerekiyor. Şu anda mevcut bağışçılarımızın yarısı 45 yaşın üzerinde olduğundan, daha genç insanların kan bağışına başlaması gerekiyor.</string>
-    <string name="aboutus">Bu kan bağışı ve toplama hakkında demo bir projedir. Ekibimiz şunlardan oluşmaktadır: \n
-1. Orhun Parmaksız\n
-2. Adil Ata Şahin\n
-3. Berkay Şengül\n
-</string>
+    <string name="aboutus">Bu kan bağışı ve toplama hakkında demo bir projedir. Ekibimiz şunlardan oluşmaktadır: \n 1. Orhun Parmaksız\n 2. Adil Ata Şahin\n 3. Berkay Şengül\n </string>
 </resources>

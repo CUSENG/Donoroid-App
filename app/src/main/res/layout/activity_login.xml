@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/red_button_bg"
-    tools:context=".activities.LoginActivity">
+
+    android:background="@drawable/background_gradient">
 
     <LinearLayout
         android:padding="10dp"
