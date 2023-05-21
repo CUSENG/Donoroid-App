@@ -183,7 +183,7 @@ public class ProfileActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<AuthResult> task) {
 
                                                 if (!task.isSuccessful()) {
-                                                    Toast.makeText(ProfileActivity.this, "Registration failed! try agian.", Toast.LENGTH_LONG)
+                                                    Toast.makeText(ProfileActivity.this, "Registration failed! try again.", Toast.LENGTH_LONG)
                                                             .show();
                                                     Log.v("error", task.getException().getMessage());
                                                 } else {
