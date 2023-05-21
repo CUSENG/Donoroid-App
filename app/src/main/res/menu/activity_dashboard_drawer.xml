@@ -16,7 +16,8 @@
         <item
             android:id="@+id/user_achiev"
             android:icon="@drawable/ic_menu_achievements"
-            android:title="@string/achiev" />
+            android:title="@string/achiev"
+            android:visible="false"/>
 
         <item
             android:id="@+id/blood_storage"
