@@ -79,7 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
             btnSignup.setText("Update Profile");
             pd.dismiss();
             /// getActionBar().setTitle("Profile");
-            getSupportActionBar().setTitle("Profile");
+            getSupportActionBar().setTitle("Profil");
             findViewById(R.id.image_logo).setVisibility(View.GONE);
             isUpdate = true;
 

@@ -67,7 +67,7 @@ public class AchievmentsView extends Fragment {
         totalDonate = view.findViewById(R.id.settotalDonate);
         donateInfo = view.findViewById(R.id.donateInfo);
 
-        getActivity().setTitle("Achievements");
+        getActivity().setTitle("Başarılar");
         mAuth = FirebaseAuth.getInstance();
         lastDate = "";
 

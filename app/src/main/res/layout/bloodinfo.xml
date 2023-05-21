@@ -16,7 +16,7 @@
             android:backgroundTint="@color/primary_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Why Should You Donate Blood?"
+            android:text="@string/why_donate"
             android:textSize="20dp"
             android:paddingTop="8dp" />
         <TextView

@@ -37,7 +37,7 @@
         android:layout_height="wrap_content" />
     <TextView
         android:textSize="24sp"
-        android:text="Donate Blood, Save Life"
+        android:text="Bağış yap, hayat kurtar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

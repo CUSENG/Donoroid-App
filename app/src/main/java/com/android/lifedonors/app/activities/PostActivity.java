@@ -53,7 +53,7 @@ public class PostActivity extends AppCompatActivity {
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
-        getSupportActionBar().setTitle("Post Blood Request");
+        getSupportActionBar().setTitle("Bağış İsteği Gönder");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         text1 = findViewById(R.id.getMobile);

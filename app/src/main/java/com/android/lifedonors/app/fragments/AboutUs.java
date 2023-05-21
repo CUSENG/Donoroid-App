@@ -20,7 +20,7 @@ public class AboutUs extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.aboutus, container, false);
-        getActivity().setTitle("About us");
+        getActivity().setTitle("Hakkımızda");
 
         textView = view.findViewById(R.id.txtv);
         Linkify.addLinks(textView, Linkify.ALL);

@@ -64,7 +64,7 @@ public class HomeView extends Fragment {
         pd.setCanceledOnTouchOutside(false);
 
         mAuth = FirebaseAuth.getInstance();
-        getActivity().setTitle("Blood Point");
+        getActivity().setTitle("Life Donors");
 
         restAdapter = new BloodRequestAdapter(postLists);
         RecyclerView.LayoutManager pmLayout = new LinearLayoutManager(getContext());

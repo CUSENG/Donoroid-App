@@ -59,7 +59,7 @@ public class NearByHospitalActivity extends Fragment implements
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.near_by_hospitals, container, false);
-        getActivity().setTitle("Nearest hospitals");
+        getActivity().setTitle("Yakındaki Hastaneler");
 
         return view;
     }
