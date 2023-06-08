@@ -16,6 +16,8 @@ import com.android.lifedonors.app.fragments.BloodInfo;
 import com.android.lifedonors.app.fragments.HomeView;
 import com.android.lifedonors.app.fragments.NearByHospitalActivity;
 import com.android.lifedonors.app.fragments.SearchDonorFragment;
+import com.android.lifedonors.app.fragments.SocialMediaView;
+import com.android.lifedonors.app.viewmodels.FacebookParser;
 import com.android.lifedonors.app.viewmodels.UserData;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -37,6 +39,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import java.util.List;
 
 public class Dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -160,6 +164,8 @@ public class Dashboard extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -171,7 +177,14 @@ public class Dashboard extends AppCompatActivity
 
         } else if (id == R.id.user_achiev) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentcontainer, new AchievmentsView()).commit();
-
+        } else if (id == R.id.socialmedia) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    List<String> messages = new FacebookParser().parse();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentcontainer, new SocialMediaView(messages)).commit();
+                }
+            }).start();
         } else if (id == R.id.logout) {
             mAuth.signOut();
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

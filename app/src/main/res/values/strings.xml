@@ -3,6 +3,7 @@
     <string name="title_activity_login">Oturum açın</string>
     <string name="home">Ana Sayfa</string>
     <string name="profile">Profil</string>
+    <string name="social_media">Sosyal Medya</string>
     <string name="achiev">Başarılar</string>
     <string name="signup">Kaydol</string>
     <string name="prompt_email">E-posta</string>
