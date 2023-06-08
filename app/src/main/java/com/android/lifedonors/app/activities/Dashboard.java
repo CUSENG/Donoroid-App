@@ -56,7 +56,7 @@ public class Dashboard extends AppCompatActivity
         setContentView(R.layout.activity_dashboard);
 
         pd = new ProgressDialog(this);
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 

@@ -34,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:text=" Blood Donor!"
+                    android:text=" Kan Bağışı!"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Contact: "
+                    android:text="İletişim: "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView

@@ -58,7 +58,7 @@ public class AchievmentsView extends Fragment {
         view = inflater.inflate(R.layout.user_achievment_fragment, container, false);
 
         pd = new ProgressDialog(getActivity());
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
         bloodgroup = getResources().getStringArray(R.array.Blood_Group);

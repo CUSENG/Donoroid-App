@@ -58,10 +58,10 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
         }
 
         CustomUserData customUserData = postLists.get(i);
-        postHolder.Name.setText("Posted by: " + customUserData.getName());
-        postHolder.Address.setText("From: " + customUserData.getAddress() + ", " + customUserData.getDivision());
-        postHolder.bloodgroup.setText("Needs " + customUserData.getBloodGroup());
-        postHolder.posted.setText("Posted on:" + customUserData.getTime() + ", " + customUserData.getDate());
+        postHolder.Name.setText("Paylaşan: " + customUserData.getName());
+        postHolder.Address.setText("Konum: " + customUserData.getAddress() + ", " + customUserData.getDivision());
+        postHolder.bloodgroup.setText("İhtiyaç " + customUserData.getBloodGroup());
+        postHolder.posted.setText("Paylaşılan Saat:" + customUserData.getTime() + ", " + customUserData.getDate());
         postHolder.contact.setText(customUserData.getContact());
 
     }

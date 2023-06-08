@@ -46,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pd = new ProgressDialog(this);
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
         pd.show();
@@ -76,7 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
             inputemail.setVisibility(View.GONE);
             inputpassword.setVisibility(View.GONE);
             retypePassword.setVisibility(View.GONE);
-            btnSignup.setText("Update Profile");
+            btnSignup.setText("Profili Güncelle");
             pd.dismiss();
             /// getActionBar().setTitle("Profile");
             getSupportActionBar().setTitle("Profil");
@@ -110,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                                 if (dataSnapshot.exists()) {
                                     isDonor.setChecked(true);
-                                    isDonor.setText("Unmark this to leave from donors");
+                                    isDonor.setText("Donor olmak istemiyorsanız işareti kaldırın.");
                                 } else {
                                     Toast.makeText(ProfileActivity.this, "Your are not a donor! Be a donor and save life by donating blood.",
                                             Toast.LENGTH_LONG).show();

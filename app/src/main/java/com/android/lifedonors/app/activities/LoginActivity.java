@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         pd = new ProgressDialog(this);
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 

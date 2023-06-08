@@ -62,7 +62,7 @@ public class SearchDonorFragment extends Fragment {
         view = inflater.inflate(R.layout.search_donor_fragment, container, false);
 
         pd = new ProgressDialog(getActivity());
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 

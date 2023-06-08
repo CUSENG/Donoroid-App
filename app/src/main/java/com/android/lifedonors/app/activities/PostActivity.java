@@ -49,7 +49,7 @@ public class PostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post);
 
         pd = new ProgressDialog(this);
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
@@ -115,10 +115,10 @@ public class PostActivity extends AppCompatActivity {
                     final Query findname = fdb.getReference("users").child(uid);
 
                     if (text1.getText().length() == 0) {
-                        Toast.makeText(getApplicationContext(), "Enter your contact number!",
+                        Toast.makeText(getApplicationContext(), "İletişim numarası giriniz",
                                 Toast.LENGTH_LONG).show();
                     } else if (text2.getText().length() == 0) {
-                        Toast.makeText(getApplicationContext(), "Enter your location!",
+                        Toast.makeText(getApplicationContext(), "Konumunuzu giriniz!",
                                 Toast.LENGTH_LONG).show();
                     } else {
                         findname.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -59,7 +59,7 @@ public class HomeView extends Fragment {
         postLists = new ArrayList<>();
 
         pd = new ProgressDialog(getActivity());
-        pd.setMessage("Loading...");
+        pd.setMessage("Yükleniyor...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
