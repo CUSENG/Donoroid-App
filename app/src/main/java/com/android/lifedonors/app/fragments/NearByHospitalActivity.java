@@ -148,13 +148,28 @@ public class NearByHospitalActivity extends Fragment implements
 
                 MarkerOptions markerOptions = new MarkerOptions();
 
-                LatLng latLng = new LatLng(39.9252953,32.8292729);
-                markerOptions.position(latLng);
-                markerOptions.title("Başkent University Ankara Hospital");
-                markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                LatLng[] latLngArr = {
+                        new LatLng(39.9252953, 32.8292729),
+                        new LatLng(39.9615262, 32.818995),
+                        new LatLng(39.9615262, 32.818995),
+                        new LatLng(39.9792721354175, 32.821356659507394),
+                        new LatLng(39.97714293699186, 32.82814531399307),
+                        new LatLng(39.901709541552435, 32.75700881096175 ),
+                        new LatLng(39.91014227499047, 32.79970119477275 ),
+                        new LatLng(39.91108887000734, 32.81055382198653),
+                        new LatLng(39.90355037144149, 32.81521493848105),
+                        new LatLng(39.89196930065489, 32.81033375089549 ),
+                        new LatLng(39.89248363500068, 32.826388696329744),
+                };
 
-                mMap.addMarker(markerOptions);
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                for (int i = 0; i < latLngArr.length; i++) {
+                    markerOptions.position(latLngArr[i]);
+                    markerOptions.title("Hastane");
+                    markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                    mMap.addMarker(markerOptions);
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLngArr[i]));
+                }
+
                 mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
 
             }
