@@ -104,18 +104,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:id="@+id/postbtn"
-            android:text="Organ duyurusu İçin"
-            android:backgroundTint="@color/primary_dark"
-            android:background="@drawable/signin_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
     </LinearLayout>
 
 </LinearLayout>

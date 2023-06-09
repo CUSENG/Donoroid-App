@@ -53,7 +53,6 @@ public class NearByHospitalActivity extends Fragment implements
     int PROXIMITY_RADIUS = 10000;
     private FusedLocationProviderClient fusedLocationProviderClient;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -146,25 +145,46 @@ public class NearByHospitalActivity extends Fragment implements
             public void onSuccess(Location location) {
                 //ShowHospitals(location.getLatitude(), location.getLongitude());
 
-                MarkerOptions markerOptions = new MarkerOptions();
+//                MarkerOptions markerOptions = new MarkerOptions();
 
                 LatLng[] latLngArr = {
-                        new LatLng(39.9252953, 32.8292729),
-                        new LatLng(39.9615262, 32.818995),
-                        new LatLng(39.9615262, 32.818995),
-                        new LatLng(39.9792721354175, 32.821356659507394),
-                        new LatLng(39.97714293699186, 32.82814531399307),
+                        new LatLng(40.000697116831766, 32.85556852734409),
+                        new LatLng(39.97893355239803, 32.83691603040569),
                         new LatLng(39.901709541552435, 32.75700881096175 ),
                         new LatLng(39.91014227499047, 32.79970119477275 ),
-                        new LatLng(39.91108887000734, 32.81055382198653),
+                        new LatLng(39.90248629052845, 32.812043128221276),
                         new LatLng(39.90355037144149, 32.81521493848105),
                         new LatLng(39.89196930065489, 32.81033375089549 ),
-                        new LatLng(39.89248363500068, 32.826388696329744),
+                        new LatLng(39.84224514400372, 32.72881980034283),
+                        new LatLng(39.96421351401901, 32.83027993226254),
+                        new LatLng(39.963856537202616, 32.83988780628768),
+                        new LatLng(39.96565587936605, 32.843625894306534),
+                        new LatLng(39.975382902601766, 32.86798356859952),
+                        new LatLng(39.87571970328286, 32.83468476814534),
+                        new LatLng(39.9841182654405, 32.56007257782081)
+                };
+
+                String[] customNames = {
+                        "Ankara Atatürk Sanatoryum Eğitim ve Araştırma Hastanesi",
+                        "Lokman Hekim Etlik Hastanesi",
+                        "Bilkent Şehir Hastansei",
+                        "Medicana Ankara Hastanesi",
+                        "Özel Koru Hastanesi",
+                        "Memorial Ankara Hastanesi",
+                        "Özel 100. Yıl Hastanesi",
+                        "Beytepe Murat Erdi Eker Devlet Hastanesi",
+                        "Ankara Etlik Şehir Hastanesi",
+                        "Etlik Zübeyde Hanım Kadın Hastalıkları Eğitim ve Araştırma Hastanesi",
+                        "Gülhane Eğitim ve Araştırma Hastanesi",
+                        "VM Medical Park (Keçiören) Ankara Hastanesi",
+                        "29 Mayıs Devlet Hastanesi Acil",
+                        "Dr. Nafiz Körez Sincan Devlet Hastanesi"
                 };
 
                 for (int i = 0; i < latLngArr.length; i++) {
+                    MarkerOptions markerOptions = new MarkerOptions();  // Create a new object here
                     markerOptions.position(latLngArr[i]);
-                    markerOptions.title("Hastane");
+                    markerOptions.title(customNames[i]);
                     markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
                     mMap.addMarker(markerOptions);
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(latLngArr[i]));
