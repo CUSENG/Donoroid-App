@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class FacebookParser {
 
-    static final String PAGE_URL = "https://graph.facebook.com/115307748252387/feed?limit=100&access_token=EAAJBMy48za0BALbITlGCiZCcPxc0XKduPTbcQUloJBpXq6NQ1WN1BilOkkOvZBOELmZC21wnMXR9HZA7lUbeyMeB0xgTjg3p2WgdcV5s89NMaZBfh5a2ho5FFiycl8TVWUi06ANBw0Be6Om4ZAHu4OmSgiTOMzqZABlDaIkHOLRZBxJ9wiluZAkzMlZARov0WZCM238fLBoppaoW7yjAZBgBrNQT";
+    static final String PAGE_URL = "https://graph.facebook.com/115307748252387/feed?limit=100&access_token=EAAJBMy48za0BAKPTQjoXOK4RwNflbYGYBVdKMAzdansbjHEpSw11h1pFQE2Lul2GBcT7XDAGeRXCXH0TkNeYy48W1BNSBGNB3pjD73QuNSvFzx9M0UDCymacznGbMHskWj70PpE9zenbOEeA75JM9mH195OUsVEpa6PjASG3FmyCmaaQ8KFOTZB8fvahNSPYZAzqhbaMVM7MDTnHdg";
 
     public List<String> parse() {
         List<String> messages = new ArrayList<>();
